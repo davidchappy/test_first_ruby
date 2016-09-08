@@ -6,11 +6,11 @@ class Temperature
 	end
 
 	def self.from_celsius(deg)
-		Temperature.new(c: deg)
+		Celsius.new(c: deg)
 	end
 
 	def self.from_fahrenheit(deg)
-		Temperature.new(f: deg)
+		Fahrenheit.new(f: deg)
 	end
 
 	def self.ftoc(deg)
@@ -37,12 +37,18 @@ class Temperature
 		end
 	end
 
-	# class Celsius
+end
 
-	# 	def initialize(deg)
-	# 	end
-	# end
+class Celsius < Temperature
+  def initialize(deg)
+    @celsius = deg
+  end
+end
 
+class Fahrenheit < Temperature
+  def initialize(deg)
+    @fahrenheit = deg
+  end
 end
 
 # temp = Temperature.new(:f => 212)
